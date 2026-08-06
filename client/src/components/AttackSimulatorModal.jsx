@@ -70,7 +70,7 @@ const AttackSimulatorModal = ({ onClose }) => {
 
       setResponse(res.data);
     } catch (err) {
-      setResponse({ error: err.response?.data?.error || err.message });
+      setResponse(err.response?.data || { error: err.message });
     } finally {
       setLoading(false);
     }
