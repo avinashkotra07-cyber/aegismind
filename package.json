@@ -1,0 +1,11 @@
+{
+  "name": "aegismind-platform",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "cd client && npm install && npm run build && cd ../server && npm install",
+    "build": "cd client && npm run build",
+    "start": "cd server && node src/server.js"
+  }
+}
