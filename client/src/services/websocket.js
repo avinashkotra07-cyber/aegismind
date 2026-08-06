@@ -13,8 +13,8 @@ class TelemetryWebSocket {
     }
 
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const host = window.location.hostname === 'localhost' ? 'localhost:5000' : window.location.host;
-    const wsUrl = `${protocol}//${host}/ws/threats`;
+    const defaultHost = window.location.hostname === 'localhost' ? 'localhost:5000' : window.location.host;
+    const wsUrl = import.meta.env.VITE_WS_URL || `${protocol}//${defaultHost}/ws/threats`;
 
     console.log(`🔌 Connecting to AegisMind Real-Time Telemetry Stream: ${wsUrl}`);
     
